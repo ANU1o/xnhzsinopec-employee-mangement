@@ -145,6 +145,10 @@ main{
 	border-color: var(--primaryColor);
 }
 
+.nav-item .dropdown-item:active{
+	background-color: var(--primaryColor) !important;
+}
+
 .scrollarea{
 	height: 30em;
 	overflow-x: none;

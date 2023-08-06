@@ -155,3 +155,23 @@ main{
 	overflow-y: auto;
 
 }
+
+.mobileview{display:none}
+
+@media screen and (max-width:1055px) {
+	aside{
+		display: none;
+	}
+	main{
+		width: 100vw;
+		margin-top: 5rem;
+	}
+
+	.mobileview {
+		display: block;
+	}
+
+	.mailview{display: none;}
+
+
+}

@@ -24,6 +24,87 @@
     />
   </head>
   <body class="user-select-none">
+    <div class="mobileview fixed-top bg-light shadow-sm p-3 px-2">
+      <div class="row">
+        <div class="col-2 align-self-center text-center">
+          <button
+            class="btn shadow-sm btn-primary"
+            type="button"
+            data-bs-toggle="offcanvas"
+            data-bs-target="#mobile_menu"
+            aria-controls="mobile_menu"
+          >
+            <i class="fa-solid fa-bars"></i>
+          </button>
+        </div>
+        <div class="col">
+          <h1 class="headFont text-center mt-2 ps-3">
+            <span class="text-primary">Sinopec</span> XNHZ
+          </h1>
+        </div>
+        <div class="col-2 align-self-center text-center">
+          <button class="btn shadow-sm btn-light">
+            <i class="fa-solid fa-right-from-bracket"></i>
+          </button>
+        </div>
+      </div>
+      <div
+        class="offcanvas offcanvas-start"
+        data-bs-scroll="true"
+        tabindex="-1"
+        id="mobile_menu"
+        aria-labelledby="mobile_menuLabel"
+      >
+        <div class="offcanvas-header">
+          <h5
+            class="offcanvas-title display-5 text-primary headFont"
+            id="mobile_menuLabel"
+          >
+            Menu
+          </h5>
+          <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="offcanvas"
+            aria-label="Close"
+          ></button>
+        </div>
+        <div class="offcanvas-body">
+          <ul class="nav nav-pills flex-column mb-auto" id="sidenav">
+            <li class="nav-item">
+              <a href="#Home" class="nav-link" aria-current="page">
+                <i class="bi bi-house-door-fill"></i>
+                <span>Home</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="#SS" class="nav-link">
+                <i class="bi bi-calendar-range-fill"></i>
+                <span>Shift Schedule</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="#DC" class="nav-link">
+                <i class="bi bi-calculator-fill"></i>
+                <span>Day Calculator</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="#ED" class="nav-link">
+                <i class="bi bi-people-fill"></i>
+                <span>Employee Details</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="#I" class="nav-link">
+                <i class="bi bi-inbox-fill"></i>
+                <span>Inbox</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
     <div class="wrapper">
       <aside>
         <div
@@ -41,31 +122,31 @@
             <li class="nav-item">
               <a href="#Home" class="nav-link" aria-current="page">
                 <i class="bi bi-house-door-fill"></i>
-                Home
+                <span>Home</span>
               </a>
             </li>
             <li class="nav-item">
               <a href="#SS" class="nav-link">
                 <i class="bi bi-calendar-range-fill"></i>
-                Shift Schedule
+                <span>Shift Schedule</span>
               </a>
             </li>
             <li class="nav-item">
               <a href="#DC" class="nav-link">
                 <i class="bi bi-calculator-fill"></i>
-                Day Calculator
+                <span>Day Calculator</span>
               </a>
             </li>
             <li class="nav-item">
               <a href="#ED" class="nav-link">
                 <i class="bi bi-people-fill"></i>
-                Employee Details
+                <span>Employee Details</span>
               </a>
             </li>
             <li class="nav-item">
               <a href="#I" class="nav-link">
                 <i class="bi bi-inbox-fill"></i>
-                Inbox
+                <span>Inbox</span>
               </a>
             </li>
           </ul>
@@ -255,36 +336,42 @@
           id="SS"
         >
           <h2 class="text-primary display-5 headFont">Shift Schedule</h2>
-          <form action="" class="row">
-            <div class="col">
-              <div class="form-floating">
-                <input
-                  type="text"
-                  class="form-control"
-                  id="civil"
-                  placeholder="0000 0000 0000"
-                  pattern="[0-9]{12}"
-                  minlength="12"
-                  maxlength="12"
-                />
-                <label for="civil">Civil ID</label>
+          <form action="">
+            <div class="row">
+              <div class="col-lg col-sm-12 mb-sm-2">
+                <div class="form-floating">
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="civil"
+                    placeholder="0000 0000 0000"
+                    pattern="[0-9]{12}"
+                    minlength="12"
+                    maxlength="12"
+                  />
+                  <label for="civil">Civil ID</label>
+                </div>
+              </div>
+              <h3
+                class="text-secondary col-lg-1 col-sm-12 text-center mt-3 headFont"
+              >
+                or
+              </h3>
+              <div class="col-lg col-sm-12 mb-3">
+                <div class="form-floating">
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="file"
+                    placeholder="HZ000"
+                    pattern="HZ[0-9]{3,}"
+                    minlength="5"
+                  />
+                  <label for="file">File Number</label>
+                </div>
               </div>
             </div>
-            <h3 class="text-secondary col-1 text-center mt-3 headFont">or</h3>
-            <div class="col">
-              <div class="form-floating">
-                <input
-                  type="text"
-                  class="form-control"
-                  id="file"
-                  placeholder="HZ000"
-                  pattern="HZ[0-9]{3,}"
-                  minlength="5"
-                />
-                <label for="file">File Number</label>
-              </div>
-            </div>
-            <button type="submit" class="btn btn-primary col-3 me-2">
+            <button type="submit" class="btn btn-primary btn-lg w-100">
               Search
             </button>
           </form>
@@ -295,20 +382,24 @@
           id="DC"
         >
           <h2 class="text-primary display-5 headFont">Day Calculator</h2>
-          <form action="" class="row">
-            <div class="col">
-              <div class="form-floating">
-                <input type="date" class="form-control" id="sdate" required />
-                <label for="sdate">Start Date</label>
+          <form action="">
+            <div class="row mb-3">
+              <div class="col mb-3">
+                <div class="form-floating">
+                  <input type="date" class="form-control" id="sdate" required />
+                  <label for="sdate">Start Date</label>
+                </div>
+              </div>
+              <div class="col">
+                <div class="form-floating">
+                  <input type="date" class="form-control" id="sdate" required />
+                  <label for="edate">End Date</label>
+                </div>
               </div>
             </div>
-            <div class="col">
-              <div class="form-floating">
-                <input type="date" class="form-control" id="sdate" required />
-                <label for="edate">End Date</label>
-              </div>
-            </div>
-            <button class="col btn btn-primary">Calculate Duration</button>
+            <button class="btn btn-primary btn-lg w-100">
+              Calculate Duration
+            </button>
           </form>
         </div>
 
@@ -317,36 +408,42 @@
           id="ED"
         >
           <h2 class="text-primary display-5 headFont">Employee Details</h2>
-          <form action="" class="row">
-            <div class="col">
-              <div class="form-floating">
-                <input
-                  type="text"
-                  class="form-control"
-                  id="civil"
-                  placeholder="0000 0000 0000"
-                  pattern="[0-9]{12}"
-                  minlength="12"
-                  maxlength="12"
-                />
-                <label for="civil">Civil ID</label>
+          <form action="">
+            <div class="row mb-3">
+              <div class="col-sm-12 col-lg">
+                <div class="form-floating">
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="civil"
+                    placeholder="0000 0000 0000"
+                    pattern="[0-9]{12}"
+                    minlength="12"
+                    maxlength="12"
+                  />
+                  <label for="civil">Civil ID</label>
+                </div>
+              </div>
+              <h3
+                class="text-secondary col-lg-1 col-sm-12 text-center mt-3 headFont"
+              >
+                or
+              </h3>
+              <div class="col-sm-12 col-lg">
+                <div class="form-floating">
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="file"
+                    placeholder="HZ000"
+                    pattern="HZ[0-9]{3,}"
+                    minlength="5"
+                  />
+                  <label for="file">File Number</label>
+                </div>
               </div>
             </div>
-            <h3 class="text-secondary col-1 text-center mt-3 headFont">or</h3>
-            <div class="col">
-              <div class="form-floating">
-                <input
-                  type="text"
-                  class="form-control"
-                  id="file"
-                  placeholder="HZ000"
-                  pattern="HZ[0-9]{3,}"
-                  minlength="5"
-                />
-                <label for="file">File Number</label>
-              </div>
-            </div>
-            <button type="submit" class="btn btn-primary col-3 me-2">
+            <button type="submit" class="btn btn-primary btn-lg w-100">
               Search
             </button>
           </form>
@@ -354,13 +451,13 @@
 
         <div class="bg-light-subtle rounded-3 m-3 shadow" id="I">
           <h2
-            class="text-white bg-primary rounded-top-3 display-5 headFont pt-lg-5 pt-3 ps-lg-5 ps-3 mb-0"
+            class="text-white text-center bg-primary rounded-top-3 display-5 headFont pt-lg-5 pt-3 ps-lg-5 ps-3 mb-0"
           >
             Inbox
           </h2>
-          <div class="bg-primary">
+          <div class="bg-primary p-3">
             <button
-              class="btn btn-light m-3 ms-5"
+              class="btn btn-light w-100"
               data-bs-toggle="modal"
               data-bs-target="#exampleModal"
             >
@@ -428,7 +525,7 @@
             </div>
           </div>
           <div class="row">
-            <div class="col-4">
+            <div class="col-lg-4 col-sm-12">
               <div
                 class="d-flex flex-column align-items-stretch flex-shrink-0 bg-body-tertiary"
               >
@@ -623,7 +720,7 @@
                 </div>
               </div>
             </div>
-            <div class="col"><h3>xxx</h3></div>
+            <div class="col-lg mailview"><h3>xxx</h3></div>
           </div>
         </div>
       </main>

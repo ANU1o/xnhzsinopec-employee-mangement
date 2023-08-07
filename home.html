@@ -171,7 +171,7 @@
 
       <main data-bs-spy="scroll" data-bs-target="#sidenav">
         <div
-          class="bg-light-subtle rounded-3 m-3 mb-5 p-lg-5 p-3 shadow"
+          class="bg-light-subtle rounded-3 m-3 mb-5 p-lg-5 p-3 shadow divcard"
           id="Home"
         >
           <h2 class="text-primary display-5 headFont">Home</h2>
@@ -187,7 +187,7 @@
                       <h1
                         class="display-3 align-center text-primary mb--25 text-center"
                       >
-                        10
+                        <span id="numscroll">0</span>
                       </h1>
                       <p class="fs-3 text-secondary text-center">units</p>
                     </div>
@@ -206,7 +206,7 @@
                       <h1
                         class="display-3 align-center text-primary mb--25 text-center"
                       >
-                        10
+                        <span id="numscroll">0</span>
                       </h1>
                       <p class="fs-3 text-secondary text-center">units</p>
                     </div>
@@ -225,7 +225,7 @@
                       <h1
                         class="display-3 align-center text-primary mb--25 text-center"
                       >
-                        10
+                        <span id="numscroll">0</span>
                       </h1>
                       <p class="fs-3 text-secondary text-center">units</p>
                     </div>
@@ -244,7 +244,7 @@
                       <h1
                         class="display-3 align-center text-primary mb--25 text-center"
                       >
-                        10
+                        <span id="numscroll">0</span>
                       </h1>
                       <p class="fs-3 text-secondary text-center">units</p>
                     </div>
@@ -263,7 +263,7 @@
                       <h1
                         class="display-3 align-center text-primary mb--25 text-center"
                       >
-                        10
+                        <span id="numscroll">0</span>
                       </h1>
                       <p class="fs-3 text-secondary text-center">units</p>
                     </div>
@@ -282,7 +282,7 @@
                       <h1
                         class="display-3 align-center text-primary mb--25 text-center"
                       >
-                        10
+                        <span id="numscroll">0</span>
                       </h1>
                       <p class="fs-3 text-secondary text-center">units</p>
                     </div>
@@ -301,7 +301,7 @@
                       <h1
                         class="display-3 align-center text-primary mb--25 text-center"
                       >
-                        10
+                        <span id="numscroll">0</span>
                       </h1>
                       <p class="fs-3 text-secondary text-center">units</p>
                     </div>
@@ -320,7 +320,7 @@
                       <h1
                         class="display-3 align-center text-primary mb--25 text-center"
                       >
-                        10
+                        <span id="numscroll">0</span>
                       </h1>
                       <p class="fs-3 text-secondary text-center">units</p>
                     </div>
@@ -332,7 +332,7 @@
         </div>
 
         <div
-          class="bg-light-subtle rounded-3 m-3 mb-5 p-lg-5 p-3 shadow"
+          class="bg-light-subtle rounded-3 m-3 mb-5 p-lg-5 p-3 shadow divcard"
           id="SS"
         >
           <h2 class="text-primary display-5 headFont">Shift Schedule</h2>
@@ -378,7 +378,7 @@
         </div>
 
         <div
-          class="bg-light-subtle rounded-3 m-3 mb-5 p-lg-5 p-3 shadow"
+          class="bg-light-subtle rounded-3 m-3 mb-5 p-lg-5 p-3 shadow divcard"
           id="DC"
         >
           <h2 class="text-primary display-5 headFont">Day Calculator</h2>
@@ -404,7 +404,7 @@
         </div>
 
         <div
-          class="bg-light-subtle rounded-3 m-3 mb-5 p-lg-5 p-3 shadow"
+          class="bg-light-subtle rounded-3 m-3 mb-5 p-lg-5 p-3 shadow divcard"
           id="ED"
         >
           <h2 class="text-primary display-5 headFont">Employee Details</h2>
@@ -730,5 +730,23 @@
       integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
       crossorigin="anonymous"
     ></script>
+    <script src="./assets/js/anime.js"></script>
+    <script>
+      let animate_numscroll = anime({
+        targets: "#numscroll",
+        innerHTML: [0, 10],
+        duration: 1000,
+        easing: "linear",
+        round: 1,
+      });
+
+      anime({
+        targets: "aside",
+        translateX: -500,
+        direction: "reverse",
+        duration: 250,
+        easing: "linear",
+      });
+    </script>
   </body>
 </html>

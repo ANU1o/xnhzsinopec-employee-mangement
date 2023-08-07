@@ -158,6 +158,10 @@ main{
 
 .mobileview{display:none}
 
+
+
+
+
 @media screen and (max-width:1055px) {
 	aside{
 		display: none;
@@ -172,6 +176,4 @@ main{
 	}
 
 	.mailview{display: none;}
-
-
 }

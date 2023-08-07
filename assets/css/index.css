@@ -51,6 +51,10 @@ main{
 	padding: 5%;
 }
 
+.border-primary{
+	border-color: var(--primaryColor) !important;
+}
+
 .bg-primary{
 	background-color: var(--primaryColor) !important;
 }

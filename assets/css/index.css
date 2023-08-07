@@ -3,6 +3,7 @@
 
 :root{
 	--primaryColor:#f00;
+	--primaryTransparent:#f005;
 	--secondaryColor: #191919;
 	--bodyFont: 'Josefin Sans', sans-serif;
 	--headFont: 'Staatliches', cursive;
@@ -24,11 +25,15 @@ body{
 }
 
 ::-webkit-scrollbar-thumb {
-	background: #f005;
+	background: var(--primaryTransparent);
 }
 
 ::-webkit-scrollbar-thumb:hover {
 	background: var(--primaryColor);
+}
+
+::selection{
+	background-color: var(--primaryTransparent);
 }
 
 .wrapper {

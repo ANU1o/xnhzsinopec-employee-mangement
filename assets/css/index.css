@@ -55,6 +55,10 @@ main{
 	background-color: var(--primaryColor) !important;
 }
 
+.bg-secondary {
+	background-color: var(--secondaryColor) !important;
+}
+
 .headFont{
 	font-family:var(--headFont) ;
 }
@@ -173,6 +177,10 @@ main{
 
 	.mobileview {
 		display: block;
+	}
+
+	.text-sm-center{
+		text-align: center;
 	}
 
 	.mailview{display: none;}

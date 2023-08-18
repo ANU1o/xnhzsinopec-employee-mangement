@@ -357,7 +357,7 @@
                     minlength="12"
                     maxlength="12"
                   />
-                  <label class="text-primary" for="civil"
+                  <label class="text-white-50" for="civil"
                     ><i class="fa-solid fa-id-card"></i> Civil ID</label
                   >
                 </div>
@@ -377,7 +377,7 @@
                     pattern="HZ[0-9]{3,}"
                     minlength="5"
                   />
-                  <label class="text-primary" for="file"
+                  <label class="text-white-50" for="file"
                     ><i class="fa-solid fa-hashtag"></i> File Number</label
                   >
                 </div>
@@ -402,7 +402,7 @@
                     <option value="">header</option>
                     <option value="">header</option>
                   </select>
-                  <label class="text-primary" for="sortby"
+                  <label class="text-white-50" for="sortby"
                     ><i class="fa-solid fa-sort"></i> Sort By</label
                   >
                 </div>
@@ -422,29 +422,42 @@
                 </button>
               </div>
             </div>
+
             <table class="table">
               <thead>
                 <tr>
-                  <th class="bg-primary text-white text-center">File No.</th>
-                  <th class="bg-primary text-white">Civil ID</th>
-                  <th class="bg-primary text-white">Name</th>
-                  <th class="bg-primary text-white text-center">Rig</th>
-                  <th class="bg-primary text-white text-center">
+                  <th scope="col" class="bg-primary align-middle text-white text-center">
+                    File No.
+                  </th>
+                  <th scope="col" class="bg-primary align-middle text-white col-2">
+                    Civil ID
+                  </th>
+                  <th scope="col" class="bg-primary align-middle text-white col-2">Name</th>
+                  <th scope="col" class="bg-primary align-middle text-white text-center">
+                    Rig
+                  </th>
+                  <th scope="col" class="bg-primary align-middle text-white text-center">
                     Duty / Vaction
                   </th>
-                  <th class="bg-primary text-white text-center">
+                  <th scope="col" class="bg-primary align-middle text-white text-center">
                     Duty Start Date
                   </th>
-                  <th class="bg-primary text-white text-center">
+                  <th scope="col" class="bg-primary align-middle text-white text-center">
                     Vaction Start Date
                   </th>
-                  <th class="bg-primary text-white text-center">
+                  <th scope="col" class="bg-primary align-middle text-white text-center">
                     Vacation End Date
                   </th>
-                  <th class="bg-primary text-white text-center">
+                  <th
+                    scope="col"
+                    class="bg-primary text-white align-middle text-center col-1"
+                  >
                     Total Days on Duty
                   </th>
-                  <th class="bg-primary text-white text-center">
+                  <th
+                    scope="col"
+                    class="bg-primary text-white align-middle text-center col-1"
+                  >
                     Total Days on Vaction
                   </th>
                 </tr>
@@ -572,6 +585,7 @@
                 </tr>
               </tbody>
             </table>
+
             <ul class="pagination pagination-lg">
               <li class="page-item disabled">
                 <a class="page-link link-toggle">Previous</a>
@@ -615,13 +629,13 @@
               <div class="col mb-3">
                 <div class="form-floating" data-bs-theme="dark">
                   <input type="date" class="form-control" id="sdate" required />
-                  <label class="text-primary" for="sdate">Start Date</label>
+                  <label class="text-white-50" for="sdate">Start Date</label>
                 </div>
               </div>
               <div class="col">
                 <div class="form-floating" data-bs-theme="dark">
                   <input type="date" class="form-control" id="edate" required />
-                  <label class="text-primary" for="edate">End Date</label>
+                  <label class="text-white-50" for="edate">End Date</label>
                 </div>
               </div>
             </div>
@@ -658,7 +672,7 @@
                     minlength="12"
                     maxlength="12"
                   />
-                  <label class="text-primary" for="civil"
+                  <label class="text-white-50" for="civil"
                     ><i class="fa-solid fa-id-card"></i> Civil ID</label
                   >
                 </div>
@@ -678,7 +692,7 @@
                     pattern="HZ[0-9]{3,}"
                     minlength="5"
                   />
-                  <label class="text-primary" for="file"
+                  <label class="text-white-50" for="file"
                     ><i class="fa-solid fa-hashtag"></i> File Number</label
                   >
                 </div>
@@ -792,7 +806,7 @@
                         minlength="12"
                         maxlength="12"
                       />
-                      <label class="text-primary" for="civil"
+                      <label class="text-white-50" for="civil"
                         ><i class="fa-solid fa-id-card"></i> Civil ID</label
                       >
                     </div>
@@ -803,7 +817,7 @@
                         id="Subject"
                         placeholder="Subject"
                       />
-                      <label class="text-primary" for="Subject">Subject</label>
+                      <label class="text-white-50" for="Subject">Subject</label>
                     </div>
                     <div class="mb-3">
                       <textarea

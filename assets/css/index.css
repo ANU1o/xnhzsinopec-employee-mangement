@@ -143,6 +143,26 @@ main{
 	padding: 5%;
 }
 
+@media (max-width:1786px){
+	.tilefont p{
+		font-size: 9.3pt;
+	}
+
+	.clockfont{
+		font-size: 30pt;
+	}
+}
+
+.dispnone{
+	display: block;
+}
+
+@media (max-width:1465px){
+	.dispnone{
+		display: none;
+	}
+}
+
 .border-primary{
 	border-color: var(--primaryColor) !important;
 }
@@ -267,7 +287,7 @@ main{
 
 
 
-@media screen and (max-width:1055px) {
+@media screen and (max-width:991px) {
 	aside{
 		display: none;
 	}

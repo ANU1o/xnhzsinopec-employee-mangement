@@ -28,6 +28,7 @@
     />
   </head>
   <body class="user-select-none">
+    <!-- Island -->
     <div
       class="dispnone island bg-secondary rounded-4 border border-5 border-primary shadow-sm fixed-top m-5 ms-auto w-25 p-3"
     >
@@ -37,6 +38,7 @@
             class="btn btn-lg btn-primary h-100 w-100"
             data-bs-toggle="collapse"
             data-bs-target="#calc"
+            title="Day Calculator"
           >
             <i class="bi bi-calculator-fill"></i>
           </button>
@@ -85,6 +87,7 @@
       </div>
     </div>
 
+    <!-- Mobile Nav -->
     <div
       class="mobileview fixed-top bg-light shadow-sm p-3 px-2 animate__animated animate__fadeInDown animate__faster"
     >
@@ -114,6 +117,8 @@
         </div>
       </div>
     </div>
+
+    <!-- Mobile Nav Menu -->
     <div
       class="offcanvas offcanvas-start"
       data-bs-scroll="true"
@@ -170,6 +175,8 @@
         </ul>
       </div>
     </div>
+
+    <!-- Content -->
     <div class="wrapper">
       <aside>
         <div
@@ -404,7 +411,7 @@
           <form action="">
             <div class="row">
               <div class="col-lg col-sm-12 mb-sm-2">
-                <div class="form-floating" data-bs-theme="dark">
+                <div class="form-floating">
                   <input
                     type="text"
                     class="form-control"
@@ -414,7 +421,7 @@
                     minlength="12"
                     maxlength="12"
                   />
-                  <label class="text-white-50" for="civil"
+                  <label for="civil"
                     ><i class="fa-solid fa-id-card"></i> Civil ID</label
                   >
                 </div>
@@ -425,7 +432,7 @@
                 or
               </h3>
               <div class="col-lg col-sm-12 mb-3">
-                <div class="form-floating" data-bs-theme="dark">
+                <div class="form-floating">
                   <input
                     type="text"
                     class="form-control"
@@ -434,7 +441,7 @@
                     pattern="HZ[0-9]{3,}"
                     minlength="5"
                   />
-                  <label class="text-white-50" for="file"
+                  <label for="file"
                     ><i class="fa-solid fa-hashtag"></i> File Number</label
                   >
                 </div>
@@ -448,7 +455,7 @@
           <div class="p-5 overflow-x-auto">
             <div class="row mb-3">
               <div class="col-lg-7 col-sm p-1">
-                <div class="form-floating mb-3" data-bs-theme="dark">
+                <div class="form-floating mb-3">
                   <select name="sortby" id="sortby" class="form-select">
                     <option selected>File No.</option>
                     <option value="">Civil ID</option>
@@ -459,7 +466,7 @@
                     <option value="">header</option>
                     <option value="">header</option>
                   </select>
-                  <label class="text-white-50" for="sortby"
+                  <label for="sortby"
                     ><i class="fa-solid fa-sort"></i> Sort By</label
                   >
                 </div>
@@ -511,7 +518,7 @@
                     scope="col"
                     class="bg-primary align-middle text-white text-center"
                   >
-                    Duty / Vaction
+                    Duty / Vacation
                   </th>
                   <th
                     scope="col"
@@ -541,7 +548,7 @@
                     scope="col"
                     class="bg-primary text-white align-middle text-center col-1"
                   >
-                    Total Days on Vaction
+                    Total Days on Vacation
                   </th>
                 </tr>
               </thead>
@@ -745,7 +752,7 @@
           <form action="">
             <div class="row mb-3">
               <div class="col-sm-12 col-lg">
-                <div class="form-floating" data-bs-theme="dark">
+                <div class="form-floating">
                   <input
                     type="text"
                     class="form-control"
@@ -755,7 +762,7 @@
                     minlength="12"
                     maxlength="12"
                   />
-                  <label class="text-white-50" for="civil"
+                  <label for="civil"
                     ><i class="fa-solid fa-id-card"></i> Civil ID</label
                   >
                 </div>
@@ -766,7 +773,7 @@
                 or
               </h3>
               <div class="col-sm-12 col-lg">
-                <div class="form-floating" data-bs-theme="dark">
+                <div class="form-floating">
                   <input
                     type="text"
                     class="form-control"
@@ -775,7 +782,7 @@
                     pattern="HZ[0-9]{3,}"
                     minlength="5"
                   />
-                  <label class="text-white-50" for="file"
+                  <label for="file"
                     ><i class="fa-solid fa-hashtag"></i> File Number</label
                   >
                 </div>
@@ -868,7 +875,9 @@
             <div
               class="modal-dialog modal-dialog-scrollable modal-dialog-centered modal-lg"
             >
-              <div class="modal-content bg-secondary">
+              <div
+                class="modal-content bg-secondary border border-5 rounded-4 border-primary"
+              >
                 <div class="modal-header">
                   <h1 class="text-primary headFont">Compose</h1>
                   <button

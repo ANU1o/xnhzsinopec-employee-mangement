@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;500&family=Staatliches&display=swap');
 
+/* *
+{outline: green solid !important;} */
 
 :root{
 	--primaryColor:#f00;
@@ -54,10 +56,67 @@ input[type="url"]:focus,
 input[type="search"]:focus,
 input[type="tel"]:focus,
 input[type="color"]:focus,
+select.form-select:focus,
 .uneditable-input:focus {
 	border-color: var(--primaryTransparent);
 	box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px var(--primaryTransparent);
 	outline: 0 none;
+}
+
+option{
+	line-height: 1.6;
+	padding-bottom: 5px;
+}
+
+option:hover {
+	background-color: var(--primaryTransparent) !important;
+}
+
+option:checked{
+	background-color: var(--primaryColor) !important;
+	color:white
+}
+
+.page-link.link-toggle{
+	background-color: var(--secondaryColor);
+	color: white;
+}
+
+.page-link.link-toggle:hover {
+	background-color: var(--primaryColor);
+	color: white;
+}
+
+.disabled .page-link.link-toggle {
+	background-color: rgba(19,19,19,0.8);
+	color: white;
+}
+
+.page-link{
+	color:var(--secondaryColor);
+}
+
+.page-link:hover {
+	color: var(--primaryColor);
+}
+
+.page-link:focus{
+	color: var(--primaryColor);
+	border-color: var(--primaryTransparent);
+		box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px var(--primaryTransparent);
+		outline: 0 none;
+}
+
+.page-item.active .page-link:focus {
+	color: white;
+	border-color: var(--primaryTransparent);
+	box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px var(--primaryTransparent);
+	outline: 0 none;
+}
+
+.page-item.active .page-link{
+	background-color: var(--primaryColor) !important;
+	border-color: var(--primaryColor);
 }
 
 ::selection{
@@ -166,6 +225,11 @@ main{
 .btn-secondary:active {
 	background-color: var(--primaryColor) !important;
 	border-color: var(--primaryColor) !important;
+}
+
+.btn-check:checked+.btn{
+	background-color: var(--primaryColor);
+	border-color: var(--primaryColor);
 }
 
 .nav-link{

@@ -250,6 +250,82 @@ main{
 .btn-check:checked+.btn{
 	background-color: var(--primaryColor);
 	border-color: var(--primaryColor);
+	color:white
+}
+
+.form-range::-webkit-slider-thumb {
+	width: 1rem;
+	height: 1rem;
+	margin-top: -0.25rem;
+	background-color: var(--primaryColor);
+	border: 0;
+	border-radius: 1rem;
+	-webkit-transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+	transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+	-webkit-appearance: none;
+	appearance: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.form-range::-webkit-slider-thumb {
+		-webkit-transition: none;
+		transition: none;
+	}
+}
+
+.form-range::-webkit-slider-thumb:active {
+	background-color: var(--primaryTransparent);
+	
+}
+
+.form-range::-webkit-slider-thumb:focus {
+	background-color: var(--primaryTransparent);
+	border-color: var(--primaryTransparent);
+	box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px var(--primaryTransparent);
+	outline: 0 none;
+
+}
+
+
+.form-range:disabled::-moz-range-thumb {
+	background-color: var(--secondaryColor);
+}
+
+.form-range::-moz-range-thumb {
+	width: 1rem;
+	height: 1rem;
+	margin-top: -0.25rem;
+	background-color: var(--primaryColor);
+	border: 0;
+	border-radius: 1rem;
+	-webkit-transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+	transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+	-webkit-appearance: none;
+	appearance: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.form-range::-moz-range-thumb {
+		-webkit-transition: none;
+		transition: none;
+	}
+}
+
+.form-range::-moz-range-thumb:active {
+	background-color: var(--primaryTransparent);
+
+}
+
+.form-range::-moz-range-thumb:focus {
+	background-color: var(--primaryTransparent);
+	border-color: var(--primaryTransparent);
+	box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px var(--primaryTransparent);
+	outline: 0 none;
+
+}
+
+.form-range:disabled::-moz-range-thumb {
+	background-color: var(--secondaryColor);
 }
 
 .nav-link{
@@ -275,7 +351,7 @@ main{
 }
 
 .scrollarea{
-	height: 30em;
+	height: 40em;
 	overflow-x: none;
 	overflow-y: auto;
 

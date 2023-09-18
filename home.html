@@ -56,30 +56,36 @@
       <!-- Calc Collapse -->
       <div class="collapse" id="calc">
         <div class="card card-body bg-secondary border-0 text-white">
-          <form action="">
-            <div class="row mb-3">
-              <div class="col mb-3">
-                <div class="form-floating" data-bs-theme="dark">
-                  <input type="date" class="form-control" id="sdate" required />
-                  <label class="text-white-50" for="sdate">Start Date</label>
-                </div>
-              </div>
-              <div class="col">
-                <div class="form-floating" data-bs-theme="dark">
-                  <input type="date" class="form-control" id="edate" required />
-                  <label class="text-white-50" for="edate">End Date</label>
-                </div>
-              </div>
-            </div>
-            <button class="btn btn-primary btn-lg w-100" type="submit">
-              Calculate Duration
-            </button>
-          </form>
+          <input
+            type="text"
+            class="form-control mb-3"
+            id="sdate"
+            name="sdate"
+            pattern="\d{2}/\d{2}/\d{4}"
+            data-bs-theme="dark"
+            placeholder="Start Date (mm/dd/yyyy)"
+          />
+          <input
+            type="text"
+            class="form-control mb-3"
+            id="edate"
+            name="edate"
+            pattern="\d{2}/\d{2}/\d{4}"
+            placeholder="End Date (mm/dd/yyyy)"
+            data-bs-theme="dark"
+          />
+          <button
+            class="btn btn-primary btn-lg w-100"
+            type="button"
+            onclick="dateCalc()"
+          >
+            Calculate Duration
+          </button>
           <div class="p-lg-5 p-3 m-2">
             <h1 class="text-white text-center">
               <span class="headFont">Result</span> <br />
               <span class="text-primary fw-bold h2">
-                <span id="res">0</span> days
+                <span id="res"></span>
               </span>
             </h1>
           </div>
@@ -481,7 +487,11 @@
               </div>
 
               <div class="col-lg col-sm-12 p-1">
-                <button class="btn btn-secondary h-75 w-100 btn-lg px-5">
+                <button
+                  class="btn btn-secondary h-75 w-100 btn-lg px-5"
+                  data-bs-toggle="modal"
+                  data-bs-target="#filter"
+                >
                   <i class="fa-solid fa-filter"></i> Filter
                 </button>
               </div>
@@ -518,7 +528,7 @@
                     scope="col"
                     class="bg-primary align-middle text-white text-center"
                   >
-                    Duty / Vacation
+                    Availablity
                   </th>
                   <th
                     scope="col"
@@ -708,42 +718,6 @@
           </div>
         </div>
 
-        <!-- <div
-          class="bg-light-subtle rounded-3 m-3 mb-5 p-lg-5 p-3 shadow divcard"
-          id="DC"
-        >
-          <h2 class="text-primary display-5 headFont">Day Calculator</h2>
-
-          <form action="">
-            <div class="row mb-3">
-              <div class="col mb-3">
-                <div class="form-floating" data-bs-theme="dark">
-                  <input type="date" class="form-control" id="sdate" required />
-                  <label class="text-white-50" for="sdate">Start Date</label>
-                </div>
-              </div>
-              <div class="col">
-                <div class="form-floating" data-bs-theme="dark">
-                  <input type="date" class="form-control" id="edate" required />
-                  <label class="text-white-50" for="edate">End Date</label>
-                </div>
-              </div>
-            </div>
-            <button class="btn btn-primary btn-lg w-100" type="submit">
-              Calculate Duration
-            </button>
-          </form>
-
-          <div class="bg-secondary p-lg-5 p-3 m-2 rounded-3">
-            <h1 class="text-white display-6 text-center">
-              Result:
-              <span class="text-primary fw-bold">
-                <span id="res">0</span> days
-              </span>
-            </h1>
-          </div>
-        </div> -->
-
         <div
           class="bg-light-subtle rounded-3 m-3 mb-5 p-lg-5 p-3 shadow divcard"
           id="ED"
@@ -926,206 +900,678 @@
               </div>
             </div>
           </div>
-          <div class="row">
-            <div class="col-lg-4 col-sm-12">
-              <div
-                class="d-flex flex-column align-items-stretch flex-shrink-0 bg-body-tertiary"
+          <div
+            class="d-flex flex-column align-items-stretch flex-shrink-0 bg-body-tertiary"
+          >
+            <div class="list-group list-group-flush border-bottom scrollarea">
+              <a
+                href="#messageView"
+                data-bs-toggle="modal"
+                class="list-group-item list-group-item-action active py-3 lh-sm"
+                aria-current="true"
               >
                 <div
-                  class="list-group list-group-flush border-bottom scrollarea"
+                  class="d-flex w-100 align-items-center justify-content-between"
                 >
-                  <a
-                    href="#"
-                    class="list-group-item list-group-item-action active py-3 lh-sm"
-                    aria-current="true"
-                  >
-                    <div
-                      class="d-flex w-100 align-items-center justify-content-between"
-                    >
-                      <strong class="mb-1">List group item heading</strong>
-                      <small>Wed</small>
-                    </div>
-                    <div class="col-10 mb-1 small">
-                      Some placeholder content in a paragraph below the heading
-                      and date.
-                    </div>
-                  </a>
-                  <a
-                    href="#"
-                    class="list-group-item list-group-item-action py-3 lh-sm"
-                  >
-                    <div
-                      class="d-flex w-100 align-items-center justify-content-between"
-                    >
-                      <strong class="mb-1">List group item heading</strong>
-                      <small class="text-body-secondary">Tues</small>
-                    </div>
-                    <div class="col-10 mb-1 small">
-                      Some placeholder content in a paragraph below the heading
-                      and date.
-                    </div>
-                  </a>
-                  <a
-                    href="#"
-                    class="list-group-item list-group-item-action py-3 lh-sm"
-                  >
-                    <div
-                      class="d-flex w-100 align-items-center justify-content-between"
-                    >
-                      <strong class="mb-1">List group item heading</strong>
-                      <small class="text-body-secondary">Mon</small>
-                    </div>
-                    <div class="col-10 mb-1 small">
-                      Some placeholder content in a paragraph below the heading
-                      and date.
-                    </div>
-                  </a>
-
-                  <a
-                    href="#"
-                    class="list-group-item list-group-item-action py-3 lh-sm"
-                    aria-current="true"
-                  >
-                    <div
-                      class="d-flex w-100 align-items-center justify-content-between"
-                    >
-                      <strong class="mb-1">List group item heading</strong>
-                      <small class="text-body-secondary">Wed</small>
-                    </div>
-                    <div class="col-10 mb-1 small">
-                      Some placeholder content in a paragraph below the heading
-                      and date.
-                    </div>
-                  </a>
-                  <a
-                    href="#"
-                    class="list-group-item list-group-item-action py-3 lh-sm"
-                  >
-                    <div
-                      class="d-flex w-100 align-items-center justify-content-between"
-                    >
-                      <strong class="mb-1">List group item heading</strong>
-                      <small class="text-body-secondary">Tues</small>
-                    </div>
-                    <div class="col-10 mb-1 small">
-                      Some placeholder content in a paragraph below the heading
-                      and date.
-                    </div>
-                  </a>
-                  <a
-                    href="#"
-                    class="list-group-item list-group-item-action py-3 lh-sm"
-                  >
-                    <div
-                      class="d-flex w-100 align-items-center justify-content-between"
-                    >
-                      <strong class="mb-1">List group item heading</strong>
-                      <small class="text-body-secondary">Mon</small>
-                    </div>
-                    <div class="col-10 mb-1 small">
-                      Some placeholder content in a paragraph below the heading
-                      and date.
-                    </div>
-                  </a>
-                  <a
-                    href="#"
-                    class="list-group-item list-group-item-action py-3 lh-sm"
-                    aria-current="true"
-                  >
-                    <div
-                      class="d-flex w-100 align-items-center justify-content-between"
-                    >
-                      <strong class="mb-1">List group item heading</strong>
-                      <small class="text-body-secondary">Wed</small>
-                    </div>
-                    <div class="col-10 mb-1 small">
-                      Some placeholder content in a paragraph below the heading
-                      and date.
-                    </div>
-                  </a>
-                  <a
-                    href="#"
-                    class="list-group-item list-group-item-action py-3 lh-sm"
-                  >
-                    <div
-                      class="d-flex w-100 align-items-center justify-content-between"
-                    >
-                      <strong class="mb-1">List group item heading</strong>
-                      <small class="text-body-secondary">Tues</small>
-                    </div>
-                    <div class="col-10 mb-1 small">
-                      Some placeholder content in a paragraph below the heading
-                      and date.
-                    </div>
-                  </a>
-                  <a
-                    href="#"
-                    class="list-group-item list-group-item-action py-3 lh-sm"
-                  >
-                    <div
-                      class="d-flex w-100 align-items-center justify-content-between"
-                    >
-                      <strong class="mb-1">List group item heading</strong>
-                      <small class="text-body-secondary">Mon</small>
-                    </div>
-                    <div class="col-10 mb-1 small">
-                      Some placeholder content in a paragraph below the heading
-                      and date.
-                    </div>
-                  </a>
-                  <a
-                    href="#"
-                    class="list-group-item list-group-item-action py-3 lh-sm"
-                    aria-current="true"
-                  >
-                    <div
-                      class="d-flex w-100 align-items-center justify-content-between"
-                    >
-                      <strong class="mb-1">List group item heading</strong>
-                      <small class="text-body-secondary">Wed</small>
-                    </div>
-                    <div class="col-10 mb-1 small">
-                      Some placeholder content in a paragraph below the heading
-                      and date.
-                    </div>
-                  </a>
-                  <a
-                    href="#"
-                    class="list-group-item list-group-item-action py-3 lh-sm"
-                  >
-                    <div
-                      class="d-flex w-100 align-items-center justify-content-between"
-                    >
-                      <strong class="mb-1">List group item heading</strong>
-                      <small class="text-body-secondary">Tues</small>
-                    </div>
-                    <div class="col-10 mb-1 small">
-                      Some placeholder content in a paragraph below the heading
-                      and date.
-                    </div>
-                  </a>
-                  <a
-                    href="#"
-                    class="list-group-item list-group-item-action py-3 lh-sm"
-                  >
-                    <div
-                      class="d-flex w-100 align-items-center justify-content-between"
-                    >
-                      <strong class="mb-1">List group item heading</strong>
-                      <small class="text-body-secondary">Mon</small>
-                    </div>
-                    <div class="col-10 mb-1 small">
-                      Some placeholder content in a paragraph below the heading
-                      and date.
-                    </div>
-                  </a>
+                  <strong class="mb-1">List group item heading</strong>
+                  <small>Wed</small>
                 </div>
+                <div class="col-10 mb-1 small">
+                  Some placeholder content in a paragraph below the heading and
+                  date.
+                </div>
+              </a>
+              <a
+                href="#messageView"
+                data-bs-toggle="modal"
+                class="list-group-item list-group-item-action py-3 lh-sm"
+              >
+                <div
+                  class="d-flex w-100 align-items-center justify-content-between"
+                >
+                  <strong class="mb-1">List group item heading</strong>
+                  <small class="text-body-secondary">Tues</small>
+                </div>
+                <div class="col-10 mb-1 small">
+                  Some placeholder content in a paragraph below the heading and
+                  date.
+                </div>
+              </a>
+              <a
+                href="#messageView"
+                data-bs-toggle="modal"
+                class="list-group-item list-group-item-action py-3 lh-sm"
+              >
+                <div
+                  class="d-flex w-100 align-items-center justify-content-between"
+                >
+                  <strong class="mb-1">List group item heading</strong>
+                  <small class="text-body-secondary">Mon</small>
+                </div>
+                <div class="col-10 mb-1 small">
+                  Some placeholder content in a paragraph below the heading and
+                  date.
+                </div>
+              </a>
+
+              <a
+                href="#messageView"
+                data-bs-toggle="modal"
+                class="list-group-item list-group-item-action py-3 lh-sm"
+                aria-current="true"
+              >
+                <div
+                  class="d-flex w-100 align-items-center justify-content-between"
+                >
+                  <strong class="mb-1">List group item heading</strong>
+                  <small class="text-body-secondary">Wed</small>
+                </div>
+                <div class="col-10 mb-1 small">
+                  Some placeholder content in a paragraph below the heading and
+                  date.
+                </div>
+              </a>
+              <a
+                href="#messageView"
+                data-bs-toggle="modal"
+                class="list-group-item list-group-item-action py-3 lh-sm"
+              >
+                <div
+                  class="d-flex w-100 align-items-center justify-content-between"
+                >
+                  <strong class="mb-1">List group item heading</strong>
+                  <small class="text-body-secondary">Tues</small>
+                </div>
+                <div class="col-10 mb-1 small">
+                  Some placeholder content in a paragraph below the heading and
+                  date.
+                </div>
+              </a>
+              <a
+                href="#messageView"
+                data-bs-toggle="modal"
+                class="list-group-item list-group-item-action py-3 lh-sm"
+              >
+                <div
+                  class="d-flex w-100 align-items-center justify-content-between"
+                >
+                  <strong class="mb-1">List group item heading</strong>
+                  <small class="text-body-secondary">Mon</small>
+                </div>
+                <div class="col-10 mb-1 small">
+                  Some placeholder content in a paragraph below the heading and
+                  date.
+                </div>
+              </a>
+              <a
+                href="#messageView"
+                data-bs-toggle="modal"
+                class="list-group-item list-group-item-action py-3 lh-sm"
+                aria-current="true"
+              >
+                <div
+                  class="d-flex w-100 align-items-center justify-content-between"
+                >
+                  <strong class="mb-1">List group item heading</strong>
+                  <small class="text-body-secondary">Wed</small>
+                </div>
+                <div class="col-10 mb-1 small">
+                  Some placeholder content in a paragraph below the heading and
+                  date.
+                </div>
+              </a>
+              <a
+                href="#messageView"
+                data-bs-toggle="modal"
+                class="list-group-item list-group-item-action py-3 lh-sm"
+              >
+                <div
+                  class="d-flex w-100 align-items-center justify-content-between"
+                >
+                  <strong class="mb-1">List group item heading</strong>
+                  <small class="text-body-secondary">Tues</small>
+                </div>
+                <div class="col-10 mb-1 small">
+                  Some placeholder content in a paragraph below the heading and
+                  date.
+                </div>
+              </a>
+              <a
+                href="#messageView"
+                data-bs-toggle="modal"
+                class="list-group-item list-group-item-action py-3 lh-sm"
+              >
+                <div
+                  class="d-flex w-100 align-items-center justify-content-between"
+                >
+                  <strong class="mb-1">List group item heading</strong>
+                  <small class="text-body-secondary">Mon</small>
+                </div>
+                <div class="col-10 mb-1 small">
+                  Some placeholder content in a paragraph below the heading and
+                  date.
+                </div>
+              </a>
+              <a
+                href="#messageView"
+                data-bs-toggle="modal"
+                class="list-group-item list-group-item-action py-3 lh-sm"
+                aria-current="true"
+              >
+                <div
+                  class="d-flex w-100 align-items-center justify-content-between"
+                >
+                  <strong class="mb-1">List group item heading</strong>
+                  <small class="text-body-secondary">Wed</small>
+                </div>
+                <div class="col-10 mb-1 small">
+                  Some placeholder content in a paragraph below the heading and
+                  date.
+                </div>
+              </a>
+              <a
+                href="#messageView"
+                data-bs-toggle="modal"
+                class="list-group-item list-group-item-action py-3 lh-sm"
+              >
+                <div
+                  class="d-flex w-100 align-items-center justify-content-between"
+                >
+                  <strong class="mb-1">List group item heading</strong>
+                  <small class="text-body-secondary">Tues</small>
+                </div>
+                <div class="col-10 mb-1 small">
+                  Some placeholder content in a paragraph below the heading and
+                  date.
+                </div>
+              </a>
+              <a
+                href="#messageView"
+                data-bs-toggle="modal"
+                class="list-group-item list-group-item-action py-3 lh-sm"
+              >
+                <div
+                  class="d-flex w-100 align-items-center justify-content-between"
+                >
+                  <strong class="mb-1">List group item heading</strong>
+                  <small class="text-body-secondary">Mon</small>
+                </div>
+                <div class="col-10 mb-1 small">
+                  Some placeholder content in a paragraph below the heading and
+                  date.
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div
+          class="modal fade"
+          id="messageView"
+          tabindex="-1"
+          aria-labelledby="messageViewLabel"
+          aria-hidden="true"
+          data-bs-backdrop="static"
+        >
+          <div
+            class="modal-dialog modal-dialog-scrollable modal-dialog-centered modal-lg"
+          >
+            <div class="modal-content border border-5 rounded-4 border-primary">
+              <div class="modal-header">
+                <h1 class="text-primary headFont">Subject</h1>
+                <button
+                  type="button"
+                  class="btn-close"
+                  data-bs-dismiss="modal"
+                  aria-label="Close"
+                ></button>
+              </div>
+              <div class="modal-body">
+                <p><strong>From:</strong> 0 00 00 00 00000</p>
+                <hr />
+                <p>
+                  Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quas
+                  soluta ea totam, delectus commodi possimus consectetur
+                  molestiae dolorem. Dignissimos assumenda recusandae, at libero
+                  illo velit quia a provident facere dicta.
+                </p>
+                <p>Sign</p>
+                <button class="btn btn-primary">
+                  <i class="fa-solid fa-trash"></i> Delete
+                </button>
+                <button class="btn btn-primary">
+                  <i class="fa-solid fa-reply"></i> Reply
+                </button>
+                <button class="btn btn-primary">
+                  <i class="fa-solid fa-reply-all"></i> Reply to All
+                </button>
+                <button class="btn btn-primary">
+                  <i class="fa-solid fa-share"></i> Forward
+                </button>
               </div>
             </div>
-            <div class="col-lg mailview"><h3>xxx</h3></div>
           </div>
         </div>
       </main>
+
+      <div
+        class="modal fade"
+        id="filter"
+        tabindex="-1"
+        aria-labelledby="exampleModalLabel"
+        aria-hidden="true"
+        data-bs-backdrop="static"
+        data-bs-theme="dark"
+      >
+        <div class="modal-dialog modal-dialog-centered">
+          <div
+            class="modal-content bg-secondary border border-5 rounded-4 border-primary"
+          >
+            <div class="modal-header">
+              <h1 class="text-primary headFont">Filter By</h1>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <form action="">
+              <div class="modal-body text-white">
+                <button type="reset" class="btn btn-light w-100" disabled>
+                  Reset Filter
+                </button>
+                <hr />
+                <div class="my-3">
+                  <label for="rig" class="d-block text-center h5 headFont"
+                    >Rig</label
+                  >
+                  <input
+                    type="radio"
+                    class="btn-check"
+                    name="rig"
+                    id="rnone"
+                    autocomplete="off"
+                    checked
+                  />
+                  <label class="btn btn-outline-light w-100" for="rnone"
+                    >none</label
+                  >
+
+                  <div class="row py-3 gap-3">
+                    <div class="col-2">
+                      <input
+                        type="radio"
+                        name="rig"
+                        id="r1"
+                        class="btn-check"
+                        autocomplete="off"
+                      /><label for="r1" class="btn btn-light w-100">1</label>
+                    </div>
+                    <div class="col-2">
+                      <input
+                        type="radio"
+                        name="rig"
+                        id="r2"
+                        class="btn-check"
+                        autocomplete="off"
+                      /><label for="r2" class="btn btn-light w-100">2</label>
+                    </div>
+                    <div class="col-2">
+                      <input
+                        type="radio"
+                        name="rig"
+                        id="r3"
+                        class="btn-check"
+                        autocomplete="off"
+                      /><label for="r3" class="btn btn-light w-100">3</label>
+                    </div>
+                    <div class="col-2">
+                      <input
+                        type="radio"
+                        name="rig"
+                        id="r4"
+                        class="btn-check"
+                        autocomplete="off"
+                      /><label for="r4" class="btn btn-light w-100">4</label>
+                    </div>
+                    <div class="col-2">
+                      <input
+                        type="radio"
+                        name="rig"
+                        id="r5"
+                        class="btn-check"
+                        autocomplete="off"
+                      /><label for="r5" class="btn btn-light w-100">5</label>
+                    </div>
+                    <div class="col-2">
+                      <input
+                        type="radio"
+                        name="rig"
+                        id="r6"
+                        class="btn-check"
+                        autocomplete="off"
+                      /><label for="r6" class="btn btn-light w-100">6</label>
+                    </div>
+                    <div class="col-2">
+                      <input
+                        type="radio"
+                        name="rig"
+                        id="r7"
+                        class="btn-check"
+                        autocomplete="off"
+                      /><label for="r7" class="btn btn-light w-100">7</label>
+                    </div>
+                    <div class="col-2">
+                      <input
+                        type="radio"
+                        name="rig"
+                        id="r8"
+                        class="btn-check"
+                        autocomplete="off"
+                      /><label for="r8" class="btn btn-light w-100">8</label>
+                    </div>
+                    <div class="col-2">
+                      <input
+                        type="radio"
+                        name="rig"
+                        id="r9"
+                        class="btn-check"
+                        autocomplete="off"
+                      /><label for="r9" class="btn btn-light w-100">9</label>
+                    </div>
+                    <div class="col-2">
+                      <input
+                        type="radio"
+                        name="rig"
+                        id="r10"
+                        class="btn-check"
+                        autocomplete="off"
+                      /><label for="r10" class="btn btn-light w-100">10</label>
+                    </div>
+                  </div>
+                  <hr />
+                </div>
+                <div class="my-3">
+                  <label
+                    for="availablity"
+                    class="d-block text-center h5 headFont"
+                    >Availablity</label
+                  >
+                  <input
+                    type="radio"
+                    class="btn-check"
+                    name="availablity"
+                    id="anone"
+                    autocomplete="off"
+                    checked
+                  />
+                  <label class="btn btn-outline-light w-100" for="anone"
+                    >none</label
+                  >
+                  <div class="row py-3">
+                    <div class="col-6">
+                      <input
+                        type="radio"
+                        class="btn-check"
+                        name="availablity"
+                        id="duty"
+                        autocomplete="off"
+                      />
+                      <label class="btn btn-light w-100" for="duty">Duty</label>
+                    </div>
+
+                    <div class="col-6">
+                      <input
+                        type="radio"
+                        class="btn-check"
+                        name="availablity"
+                        id="vacation"
+                        autocomplete="off"
+                      />
+                      <label class="btn btn-light w-100" for="vacation"
+                        >Vacation</label
+                      >
+                    </div>
+                  </div>
+                  <hr />
+                </div>
+                <div class="my-3">
+                  <label for="rdsDate" class="d-block text-center h5 headFont"
+                    >Duty Start Date</label
+                  >
+                  <input
+                    type="radio"
+                    class="btn-check"
+                    name="rdsDate"
+                    id="dsnone"
+                    autocomplete="off"
+                    checked
+                  />
+                  <label class="btn btn-outline-light w-100" for="dsnone"
+                    >none</label
+                  >
+                  <div class="row gap-3 my-3">
+                    <div class="col-1 align-self-center">
+                      <input
+                        type="radio"
+                        class="btn-check"
+                        name="rdsDate"
+                        id="dsseldate"
+                        autocomplete="off"
+                      />
+                      <label class="btn btn-light" for="dsseldate"
+                        ><i
+                          class="fa-solid fa-calendar-days align-self-center"
+                        ></i
+                      ></label>
+                    </div>
+                    <div class="col">
+                      <div class="form-floating">
+                        <input
+                          type="date"
+                          class="form-control"
+                          id="endate"
+                          disabled
+                        />
+                        <label class="text-white-50" for="endate"
+                          >Enter Date</label
+                        >
+                      </div>
+                    </div>
+                  </div>
+                  <hr />
+                </div>
+                <div class="my-3">
+                  <label for="rdeDate" class="d-block text-center h5 headFont"
+                    >Duty End Date</label
+                  >
+                  <input
+                    type="radio"
+                    class="btn-check"
+                    name="rdeDate"
+                    id="denone"
+                    autocomplete="off"
+                    checked
+                  />
+                  <label class="btn btn-outline-light w-100" for="denone"
+                    >none</label
+                  >
+                  <div class="row gap-3 my-3">
+                    <div class="col-1 align-self-center">
+                      <input
+                        type="radio"
+                        class="btn-check"
+                        name="rdeDate"
+                        id="deseldate"
+                        autocomplete="off"
+                      />
+                      <label class="btn btn-light" for="deseldate"
+                        ><i
+                          class="fa-solid fa-calendar-days align-self-center"
+                        ></i
+                      ></label>
+                    </div>
+                    <div class="col">
+                      <div class="form-floating">
+                        <input
+                          type="date"
+                          class="form-control"
+                          id="date"
+                          disabled
+                        />
+                        <label class="text-white-50" for="date"
+                          >Enter Date</label
+                        >
+                      </div>
+                    </div>
+                  </div>
+                  <hr />
+                </div>
+                <div class="my-3">
+                  <label for="rvsDate" class="d-block text-center h5 headFont"
+                    >Vaction Start Date</label
+                  >
+                  <input
+                    type="radio"
+                    class="btn-check"
+                    name="rvsDate"
+                    id="vsnone"
+                    autocomplete="off"
+                    checked
+                  />
+                  <label class="btn btn-outline-light w-100" for="vsnone"
+                    >none</label
+                  >
+                  <div class="row gap-3 my-3">
+                    <div class="col-1 align-self-center">
+                      <input
+                        type="radio"
+                        class="btn-check"
+                        name="rvsDate"
+                        id="vsseldate"
+                        autocomplete="off"
+                      />
+                      <label class="btn btn-light" for="vsseldate"
+                        ><i
+                          class="fa-solid fa-calendar-days align-self-center"
+                        ></i
+                      ></label>
+                    </div>
+                    <div class="col">
+                      <div class="form-floating">
+                        <input
+                          type="date"
+                          class="form-control"
+                          id="vsdate"
+                          disabled
+                        />
+                        <label class="text-white-50" for="vsdate"
+                          >Enter Date</label
+                        >
+                      </div>
+                    </div>
+                  </div>
+                  <hr />
+                </div>
+                <div class="my-3">
+                  <label for="rveDate" class="d-block text-center h5 headFont"
+                    >Vacation End Date</label
+                  >
+                  <input
+                    type="radio"
+                    class="btn-check"
+                    name="rveDate"
+                    id="venone"
+                    autocomplete="off"
+                    checked
+                  />
+                  <label class="btn btn-outline-light w-100" for="venone"
+                    >none</label
+                  >
+                  <div class="row gap-3 my-3">
+                    <div class="col-1 align-self-center">
+                      <input
+                        type="radio"
+                        class="btn-check"
+                        name="rveDate"
+                        id="veseldate"
+                        autocomplete="off"
+                      />
+                      <label class="btn btn-light" for="veseldate"
+                        ><i
+                          class="fa-solid fa-calendar-days align-self-center"
+                        ></i
+                      ></label>
+                    </div>
+                    <div class="col">
+                      <div class="form-floating">
+                        <input
+                          type="date"
+                          class="form-control"
+                          id="vedate"
+                          disabled
+                        />
+                        <label class="text-white-50" for="vedate"
+                          >Enter Date</label
+                        >
+                      </div>
+                    </div>
+                  </div>
+                  <hr />
+                </div>
+                <div class="my-3 range-wrap">
+                  <label for="dod" class="d-block headFont text-center h5"
+                    >Days on Duty <br /><span
+                      class="badge fs-6 bg-light text-primary rangeval"
+                      >0</span
+                    ></label
+                  >
+                  <div class="text-center">
+                    <span class="align-top mx-2 text-center">0</span
+                    ><input
+                      type="range"
+                      class="form-range w-75 mx-2"
+                      value="0"
+                      min="0"
+                      max="100"
+                      id="dod"
+                    />
+                    <span class="align-top mx-2 text-center">100</span>
+                  </div>
+                  <hr />
+                </div>
+                <div class="my-3 range-wrap">
+                  <label for="dov" class="d-block headFont text-center h5"
+                    >Days on Vacation <br /><span
+                      class="badge fs-6 bg-light text-primary rangeval"
+                      >0</span
+                    >
+                  </label>
+
+                  <div class="text-center">
+                    <span class="align-top mx-2 text-center">0</span
+                    ><input
+                      type="range"
+                      class="form-range w-75 mx-2"
+                      value="0"
+                      min="0"
+                      max="100"
+                      id="dov"
+                      name="dov"
+                    />
+                    <span class="align-top mx-2 text-center">100</span>
+                  </div>
+                </div>
+              </div>
+              <div class="modal-footer">
+                <button type="submit" class="btn btn-primary w-100">
+                  Filter
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
     </div>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
@@ -1160,5 +1606,6 @@
         easing: "linear",
       });
     </script>
+    <script src="./assets/js/range.js"></script>
   </body>
 </html>
